@@ -1,17 +1,34 @@
 
+import { useNavigate } from 'react-router-dom'; 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
 import "./Login.css"
+import { usuarios } from "../../data/usuarios"; //aqui chamei os dados da pasta usuarios.js
+import { toast } from 'react-toastify';
 
 export function Login() {
-  return (
 
+    const navigate = useNavigate(); // para usar o navigate é preciso declarar aqui e importar o useNavigate
+    
+    const handleSubmit = (event) => {  //Esta função handleSubmit receberá os dados do formulário se a validação do formulário for bem-sucedida.
+        event.preventDefault();  //impede que ele envie o formulário antes de passar pela validação
+        const email = event.target.loginEmail.value;
+        const senha = event.target.loginSenha.value;
+        const usuarioEncontrado = usuarios.find(u => u.email === email && u.senha === senha);
+        if (usuarioEncontrado) {
+        navigate('/');  //vai para home
+        } else {
+        toast.error('Erro ao autenticar!');  //para o toast funcionar tem que instalar: npm install react-toastify, importar esse toast ali em cima e VER ARQUIVO APP tem dois imports de toast lá e mais um 'toastcontainer' na div
+        
+        }
+    };
+
+  return (
     <div className='body'>
 
         <h3 className='titulo'>Entre em sua conta!</h3>
 
-        <Form className='form'>
+        <Form className='form' onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="loginEmail">
                 <Form.Label>Email:</Form.Label>
                 <Form.Control type="email" placeholder="login@email.com" />        
@@ -32,7 +49,7 @@ export function Login() {
                 </div>      
             </Form.Group>
 
-            <Form.Group className="forgot" controlId="lembreForgot">                 
+            <Form.Group className="forgot" controlId="forgot">                 
                     <a href="#" id="forgot" class="font-weight-bold d-flex justify-content-end">Esqueceu sua senha?</a>                
             </Form.Group>
 
@@ -57,7 +74,6 @@ export function Login() {
                     </p>            
                 </div>       
                 </Form.Group>
-
         </Form>
     </div>
   )
