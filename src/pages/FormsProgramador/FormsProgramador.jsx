@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Alert, InputGroup} from "react-bootstrap";
+import { Alert, InputGroup, Modal} from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -64,7 +64,7 @@ export function FormsProgramador() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="nivel">
-                    <Form.Select {...register("nível")}>
+                    <Form.Select {...register("nivel")}>
                         <option>Selecione seu nível de experiência:</option>
                         <option value="jr">Júnior</option>
                         <option value="pl">Pleno</option>
@@ -86,8 +86,33 @@ export function FormsProgramador() {
                 </Form.Group>
     
             </Form>
+
+            {progr && 
+                <Modal.Dialog variant="danger" className="text-primary">
+                    <Modal.Header closeButton>
+                    <Modal.Title>Novo programador cadastrado:</Modal.Title>
+                    </Modal.Header>
+            
+                    <Modal.Body>
+                        <ul>
+                            <li>Nome: {progr.nome}</li>
+                            <li>Email: {progr.emai}</li>
+                            <li>Telefone: {progr.telefone}</li>
+                            <li>Estado: {progr.estado}</li>
+                            <li>Cidade: {progr.cidade}</li>
+                            <li>Interesses: {progr.interesses}</li>
+                            <li>Nível: {progr.nivel}</li>
+                            <li>Portfólio: {progr.portfolio}</li>
+                        </ul>
+                    </Modal.Body>
+            
+                    <Modal.Footer>
+                    <Button variant="secondary">Fechar</Button>                    
+                    </Modal.Footer>
+                </Modal.Dialog>
+                } 
         </div>
       )
     }
 
-    // onSubmit={handleSubmit}
+   

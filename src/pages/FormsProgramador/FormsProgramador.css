@@ -14,39 +14,4 @@
     color: lightgray;
 }
 
-.form {
-    margin: 20px;
-    color: beige;
-}
-
-img {
-    width: 30px;
-    height: 30px;
-    object-fit: cover;
-    border-radius: 50%;
-    position: relative
-}
-
-#loginCadastrar {
-    align-items: center;
-}
-
-.forgot a {
-    min-width: 100px;
-    margin-left: auto;
-    text-decoration: none;
-    color: gray;
-}
-
-.forgot a:active {
-    color: black;
-}
-
-.forgot a:hover {
-    color: beige;
-}
-
-.entrar {
-    width: 155px;
-}
 
