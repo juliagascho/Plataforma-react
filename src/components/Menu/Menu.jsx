@@ -22,7 +22,19 @@ export function Menu() {
             </Button>
             <Button variant="link">
                 <Link to="/login">Login</Link>
-            </Button>            
+            </Button>   
+            <Button variant="link">
+                <Link to="/pokemon">Pokemon</Link>
+            </Button>   
+            <Button variant="link">
+                <Link to="/superherois">Super-herois</Link>
+            </Button>        
+            <Button variant="link">
+                <Link to="/equipamentos">Equipamentos</Link>
+            </Button> 
+            <Button variant="link">
+                <Link to="/formsprogramador">Formulário Programador</Link>
+            </Button> 
           </Nav>
         </Container>
       </Navbar>            

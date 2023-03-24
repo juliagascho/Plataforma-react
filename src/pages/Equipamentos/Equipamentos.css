@@ -1,0 +1,7 @@
+input, select, textarea, button[type=submit] {
+    width: 500px;
+}
+
+textarea {
+ height: 300px;
+}

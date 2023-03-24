@@ -1,0 +1,52 @@
+.body {
+    margin: 20px auto;
+    border: 2px solid rgb(30, 33, 33);
+    width: 550px;
+    height: 100%;
+    border-radius: 5px;
+    background-color: rgb(30, 33, 33);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titulo {
+    text-align: center;
+    margin: 20px;
+    color: lightgray;
+}
+
+.form {
+    margin: 20px;
+    color: beige;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative
+}
+
+#loginCadastrar {
+    align-items: center;
+}
+
+.forgot a {
+    min-width: 100px;
+    margin-left: auto;
+    text-decoration: none;
+    color: gray;
+}
+
+.forgot a:active {
+    color: black;
+}
+
+.forgot a:hover {
+    color: beige;
+}
+
+.entrar {
+    width: 155px;
+}
+
